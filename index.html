@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заметки</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1>Заметки</h1>
+      </div>
+    </header>
+
+    <section id="notes" class="notes" aria-live="polite"></section>
+
+    <div id="empty" class="empty hidden">Заметок пока нет.</div>
+    <div id="loading" class="loading">Загрузка заметок…</div>
+
+    <button id="addBtn" class="fab" aria-label="Добавить заметку">+</button>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="modalTitle">Новая заметка</h2>
+        <button id="closeBtn" class="close" aria-label="Закрыть">×</button>
+      </div>
+      <form id="noteForm">
+        <label for="type">Тип</label>
+        <select id="type" required>
+          <option value="">Выберите предмет</option>
+          <option>Алгебра</option>
+          <option>Геометрия</option>
+          <option>ВИС</option>
+          <option>История</option>
+          <option>География</option>
+          <option>Химия</option>
+          <option>Физика</option>
+          <option>Русский</option>
+          <option>Литература</option>
+          <option>Музыка</option>
+          <option>Родной русский</option>
+          <option>Родная литература</option>
+          <option>ОБЖ</option>
+          <option>Экономика</option>
+          <option>Домашнее задание</option>
+        </select>
+
+        <label for="content">Содержание</label>
+        <textarea id="content" maxlength="10000" placeholder="Введите заметку…" required></textarea>
+
+        <button class="save" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
